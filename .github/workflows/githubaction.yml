@@ -21,7 +21,7 @@ jobs:
     - name: Scripts
       run: | 
         
-        docker build . -t app -f /guestbook-go/Dockerfile
+        docker build . -t app -f GithubAction-Dockerimage/guestbook-go/Dockerfile
         docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
         docker tag app ${{secrets.DOCKER_USER}}/go_image232
         docker push ${{secrets.DOCKER_USER}}/go_image232
